@@ -1,5 +1,5 @@
 # Makefile
-all: first sum load store uncdnlBranches compare loop collatz
+all: first sum load store uncdnlBranches compare loop collatz array
 
 first: first.o
 	gcc -o $@ $+
@@ -49,5 +49,11 @@ collatz: collatz.o
 collatz.o: collatz.s
 	as -o $@ $<
 
+array: array.o
+	gcc -o $@ $+
+
+array.o: array.s
+	as -o $@ $<
+
 clean:
-	rm -vf first sum load store uncdnlBranches compare loop collatz *.o
+	rm -vf first sum load store uncdnlBranches compare loop collatz array *.o
